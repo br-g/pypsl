@@ -73,7 +73,8 @@ def _get_combinations(rule: 'Rule', check_data: bool) \
     if check_data:
         _check_missing_data(rule.atoms, comb)
     else:
-        comb = comb.dropna()
+        subset = ['__value{}'.format(i) for i in range(len(rule.atoms))]
+        comb = comb.dropna(subset=subset)
 
     for _, val in comb.iterrows():
         yield val
@@ -111,6 +112,7 @@ def _check_missing_data(atoms: List['Atom'],
                         comb: 'pd.core.series.Series') -> None:
     """Raises an exception if there is missing data."""
     term_count = 0
+    print(comb)
     while '__value{}'.format(term_count) in comb:
         if np.isnan(comb['__value{}'.format(term_count)]).any():
             raise ValueError('Missing values for predicate `{}`'.format(
