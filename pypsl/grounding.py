@@ -112,7 +112,6 @@ def _check_missing_data(atoms: List['Atom'],
                         comb: 'pd.core.series.Series') -> None:
     """Raises an exception if there is missing data."""
     term_count = 0
-    print(comb)
     while '__value{}'.format(term_count) in comb:
         if np.isnan(comb['__value{}'.format(term_count)]).any():
             raise ValueError('Missing values for predicate `{}`'.format(
