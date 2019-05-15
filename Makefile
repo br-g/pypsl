@@ -1,5 +1,5 @@
 install:
-	python3 -m pip install pytest pytest-cov pylint mypy
+	python3 -m pip install pytest coverage coverage-badge pylint mypy
 	python3 -m pip install -r requirements.txt
 
 test:
@@ -7,7 +7,4 @@ test:
 	pre-commit install
 	pylint pypsl
 	mypy pypsl
-	python3 -m pytest -v -p no:warnings --cov=pypsl --cov-report term-missing
-
-jenkins-test:
-	python3 -m pytest -v -p no:warnings --cov=pypsl --cov-report term-missing
+	python3 -m pytest tests/

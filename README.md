@@ -3,6 +3,10 @@
 PyPSL is a new library for building PSL models in Python.    
 *This is still a prototype.*
 
+![Version](http://img.shields.io/badge/version-0.0.1-blue.svg)     
+[![Build status](http://ec2-54-93-95-13.eu-central-1.compute.amazonaws.com/jenkins/buildStatus/icon?job=pypsl_fork%2Fmaster)](http://ec2-54-93-95-13.eu-central-1.compute.amazonaws.com/jenkins/job/pypsl_fork/)     
+![Tests coverage](https://s3.eu-central-1.amazonaws.com/pypsl-public/cov_master.svg)
+
 ## Probabilistic Soft Logic
 
 > Probabilistic soft logic (PSL) is a machine learning framework for developing probabilistic models. PSL models are easy to use and fast. You can define models using a straightforward logical syntax and solve them with fast convex optimization. PSL has produced state-of-the-art results in many areas spanning natural language processing, social-network analysis, knowledge graphs, recommender system, and computational biology.
