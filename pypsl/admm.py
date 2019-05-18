@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from pypsl.model.ground_atom import GroundAtom
 
 
-_cholesky_cache = {}  # type: Dict[Tuple[int, float], np.ndarray]
+_cholesky_cache = {}  # type: Dict[Tuple[float, Tuple[Optional[bool], ...]], np.ndarray]
 
 
 def infer(model: 'Model',
@@ -195,7 +195,7 @@ def _get_cholesky_L(copies: Tuple['GroundAtom', ...], weight: float,
                     step_size: float) -> 'np.ndarray':
     """Solves the system of linear equations using Cholesky decomposition."""
     # Reuse previous results when possible
-    mat_hash = (len(copies), weight)
+    mat_hash = (weight, tuple([c.is_negated for c in copies]))
     if mat_hash in _cholesky_cache:
         return _cholesky_cache[mat_hash]
 
