@@ -4,7 +4,7 @@ PyPSL is a new library for building PSL models in Python.
 *This is still a prototype.*
 
 ![Version](http://img.shields.io/badge/version-0.0.1-blue.svg)     
-[![Build status](http://ec2-54-93-95-13.eu-central-1.compute.amazonaws.com/jenkins/buildStatus/icon?job=pypsl_fork%2Fmaster)](http://ec2-54-93-95-13.eu-central-1.compute.amazonaws.com/jenkins/job/pypsl_fork/)     
+[![Build status](http://52.57.67.123/jenkins/buildStatus/icon?job=pypsl%2Fmaster)](http://52.57.67.123/jenkins/job/pypsl/)     
 ![Tests coverage](https://s3.eu-central-1.amazonaws.com/pypsl-public/cov_master.svg)
 
 ## Probabilistic Soft Logic
