@@ -62,7 +62,7 @@ class Rule:
         obj = 0.
         for gr in self.grounded.values():
             dist = gr.get_observed_dist_to_satisfaction()
-            obj += 1 - self.weight * max(0, dist) ** 2
+            obj += max(0, 1 - self.weight * max(0, dist) ** 2)
         return obj
 
     def get_expected_objective(self) -> float:
@@ -71,7 +71,7 @@ class Rule:
         obj = 0.
         for gr in self.grounded.values():
             dist = gr.get_expected_dist_to_satisfaction()
-            obj += 1 - self.weight * max(0, dist) ** 2
+            obj += max(0, 1 - self.weight * max(0, dist) ** 2)
         return obj
 
     def __repr__(self):
